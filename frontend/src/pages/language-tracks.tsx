@@ -1,5 +1,7 @@
 import { useParams, Navigate } from "@solidjs/router";
 import ThemeToggle from "../components/layout/theme-toggle";
+import RepoLink from "../components/layout/repo-link";
+import Footer from "../components/layout/footer";
 import TrackCard from "../components/track-card/track-card";
 import { LANGUAGES, TRACKS } from "../lib/constants";
 import "./landing.css";
@@ -13,6 +15,7 @@ export default function LanguageTracks() {
       {language() ? (
         <div class="landing">
           <header class="landing__header">
+            <RepoLink />
             <ThemeToggle />
           </header>
           <main class="landing__main">
@@ -35,6 +38,7 @@ export default function LanguageTracks() {
               />
             </div>
           </main>
+          <Footer />
         </div>
       ) : (
         <Navigate href="/" />
